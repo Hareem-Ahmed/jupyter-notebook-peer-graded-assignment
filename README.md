@@ -1,98 +1,71 @@
 📊 Statistical Analysis of Boston Housing Data
 
-📌 Project Overview
+📌 Overview
 
-This project explores the **Boston Housing dataset** through data visualization and statistical analysis. The aim was to identify patterns in housing prices and examine relationships between various socioeconomic and structural factors.
-The analysis applies **graphical methods** to understand data distribution and **statistical hypothesis testing** to validate findings.
+This project analyzes the **Boston Housing dataset** using data visualization and hypothesis testing methods. The aim was to identify factors influencing median home values and test for statistical significance using different techniques.
 
-## 🔍 Objectives
+The analysis covers:
 
-* Visualize and summarize the housing dataset.
-* Identify relationships between housing price and predictor variables.
-* Apply statistical tests (t-test, correlation, regression, ANOVA) to test hypotheses.
-* Interpret p-values to decide whether to accept or reject null hypotheses.
+* Data visualization (Boxplot, Bar Plot, Scatter Plot, Histogram)
+* Hypothesis testing (t-test, Correlation, ANOVA, Regression)
+* Interpretation of p-values to accept or reject null hypotheses
 
----
+📊 Analysis Steps
 
-## 📈 Data Visualization Techniques
+1. **Boxplot – Median Value of Owner-Occupied Homes (MEDV)**
 
-To gain insights, I represented the data using:
+   * Visualized the distribution of median housing values.
+   * Tested whether proximity to the Charles River affected house prices.
+   * **Result:** Houses near the river had significantly higher median values (p < 0.05).
 
-* **Box Plots** → To detect outliers and compare distributions.
-* **Scatter Plots** → To explore relationships between median home value and predictors (e.g., RM, LSTAT).
-* **Histograms** → To examine the distribution of numerical variables.
-* **Bar Plots** → To summarize categorical variables and compare averages.
+2. **Bar Plot – Charles River Variable**
 
----
+   * Compared the distribution of houses bounded vs. not bounded by the Charles River.
 
-## 📊 Statistical Analysis Performed
+3. **Boxplot – MEDV vs Age Groups**
 
-1. **t-Test**
+   * Grouped houses into 3 categories:
 
-   * Compared means between groups (e.g., high vs. low crime rate areas).
-   * Evaluated whether differences in housing values were statistically significant.
+     * ≤ 35 years
+     * 35–70 years
+     * ≥ 70 years
+   * Compared median housing values across age groups.
+   * **Result:** Significant differences existed between groups (p < 0.05, ANOVA).
 
-2. **Correlation Analysis**
+4. **Scatter Plot – Nitric Oxide (NOX) vs Non-Retail Business Acres (INDUS)**
 
-   * Computed Pearson correlation coefficients between variables.
-   * Found strong negative correlation between LSTAT (% lower status population) and MEDV (median house value).
+   * Analyzed the relationship between NOX concentration and the proportion of industrial land use.
+   * **Result:** Positive correlation confirmed (p < 0.05).
 
-3. **Regression Analysis**
+5. **Histogram – Pupil-Teacher Ratio (PTRATIO)**
 
-   * Built a linear regression model to predict housing prices using multiple predictors.
-   * Interpreted coefficients to understand variable influence.
+   * Showed the distribution of PTRATIO across different towns.
 
-4. **ANOVA (Analysis of Variance)**
+6. **Regression – Weighted Distance to Employment Centers (DIS)**
 
-   * Tested whether housing values differed significantly across categorical variables (e.g., proximity to Charles River).
-   * Used p-values to confirm statistical significance.
+   * Tested if distance from employment centers predicted median house value.
+   * **Result:** Negative relationship found (as distance increased, MEDV decreased).
 
----
+📌 Hypothesis Testing Summary
 
-## 📌 Hypothesis Testing Approach
+* **t-Test:** Significant difference in housing values near Charles River (Reject H₀).
+* **Correlation:** NOX and INDUS positively correlated (Reject H₀).
+* **ANOVA:** Significant differences in MEDV across housing age groups (Reject H₀).
+* **Regression:** Distance to employment centers negatively impacted MEDV.
 
-* **Null Hypothesis (H₀):** No relationship between predictor and housing prices.
-* **Alternative Hypothesis (H₁):** A significant relationship exists.
-* **Decision Rule:** If p-value < 0.05 → Reject H₀, accept H₁.
+✅ Key Findings
 
-**Findings:**
+* Location and environment strongly affect housing prices.
+* Median home value increases with proximity to the Charles River.
+* Higher NOX levels are associated with more industrial land use.
+* Distance from employment centers negatively impacts housing value.
+* House age categories show significant pricing differences.
 
-* LSTAT, RM, and PTRATIO showed statistically significant effects on housing prices.
-* Location-based factors (e.g., proximity to Charles River) also influenced prices.
+ 🛠️ Tools & Libraries
 
----
+* **Python**: Pandas, NumPy, Matplotlib, Seaborn, SciPy, Statsmodels
+* **Jupyter Notebook**
 
-## ✅ Key Results
+🔎 Note
 
-* Positive correlation between **number of rooms (RM)** and house value.
-* Negative correlation between **LSTAT** and house value.
-* Regression model explained a large portion of variability in housing prices.
-* Several hypotheses were rejected, confirming strong links between socioeconomic factors and housing values.
-
----
-
-## 🛠️ Tools & Libraries
-
-* Python (Pandas, NumPy, Matplotlib, Seaborn, SciPy, Statsmodels)
-* Jupyter Notebook
-
----
-
-## 📂 Repository Structure
-
-* `data/` → Boston housing dataset
-* `notebooks/` → Jupyter notebooks for visualization and analysis
-* `results/` → Graphs, regression outputs, and statistical summaries
-
----
-
-## 🎯 Conclusion
-
-This project demonstrates the application of **exploratory data analysis, hypothesis testing, and regression modeling** on real-world housing data. It highlights how statistical methods can provide actionable insights into socioeconomic and urban planning challenges.
-
----
-
-⚡ Pro tip: You should also add a few **graphs (boxplot, regression line, correlation heatmap)** as images in your README for extra impact.
-
-Do you want me to also **make a short “Project Highlights” version** (like 4–5 bullet points) so you can use it directly on your LinkedIn “Projects” section?
-
+This analysis was originally completed as part of an **IBM Data Science course assignment**. This has been documented and structured here as a standalone project to demonstrate **statistical analysis, hypothesis testing, and visualization techniques**.
